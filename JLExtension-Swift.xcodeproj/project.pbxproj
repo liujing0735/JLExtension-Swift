@@ -14,6 +14,9 @@
 		223893231ECEBC9F0036029C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223893211ECEBC9F0036029C /* LaunchScreen.storyboard */; };
 		2238932E1ECEBC9F0036029C /* JLExtension_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2238932D1ECEBC9F0036029C /* JLExtension_SwiftTests.swift */; };
 		223893391ECEBCA00036029C /* JLExtension_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223893381ECEBCA00036029C /* JLExtension_SwiftUITests.swift */; };
+		223893481ECEBDD00036029C /* JLExtensionSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223893471ECEBDD00036029C /* JLExtensionSwift.swift */; };
+		2260F4371F4EA580004B0E5B /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260F4361F4EA580004B0E5B /* NSString+Extension.swift */; };
+		22BBAA9C1F42EAE300242E50 /* NSArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBAA9B1F42EAE300242E50 /* NSArray+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,10 @@
 		223893341ECEBCA00036029C /* JLExtension-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JLExtension-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		223893381ECEBCA00036029C /* JLExtension_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLExtension_SwiftUITests.swift; sourceTree = "<group>"; };
 		2238933A1ECEBCA00036029C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		223893471ECEBDD00036029C /* JLExtensionSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLExtensionSwift.swift; sourceTree = "<group>"; };
+		2260F4361F4EA580004B0E5B /* NSString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Extension.swift"; sourceTree = "<group>"; };
+		2260F4381F4EAA0A004B0E5B /* JLExtension-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLExtension-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		22BBAA9B1F42EAE300242E50 /* NSArray+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSArray+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +104,7 @@
 		223893171ECEBC9F0036029C /* JLExtension-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				223893461ECEBD9F0036029C /* Source */,
 				223893181ECEBC9F0036029C /* AppDelegate.swift */,
 				2238931A1ECEBC9F0036029C /* ViewController.swift */,
 				2238931C1ECEBC9F0036029C /* Main.storyboard */,
@@ -123,6 +131,17 @@
 				2238933A1ECEBCA00036029C /* Info.plist */,
 			);
 			path = "JLExtension-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		223893461ECEBD9F0036029C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				223893471ECEBDD00036029C /* JLExtensionSwift.swift */,
+				22BBAA9B1F42EAE300242E50 /* NSArray+Extension.swift */,
+				2260F4361F4EA580004B0E5B /* NSString+Extension.swift */,
+				2260F4381F4EAA0A004B0E5B /* JLExtension-Swift-Bridging-Header.h */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +212,7 @@
 				TargetAttributes = {
 					223893141ECEBC9F0036029C = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					223893281ECEBC9F0036029C = {
@@ -260,6 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2238931B1ECEBC9F0036029C /* ViewController.swift in Sources */,
+				2260F4371F4EA580004B0E5B /* NSString+Extension.swift in Sources */,
+				223893481ECEBDD00036029C /* JLExtensionSwift.swift in Sources */,
+				22BBAA9C1F42EAE300242E50 /* NSArray+Extension.swift in Sources */,
 				223893191ECEBC9F0036029C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,10 +437,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "JLExtension-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jasonliu.JLExtension-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JLExtension-Swift/Source/JLExtension-Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,10 +453,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "JLExtension-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jasonliu.JLExtension-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JLExtension-Swift/Source/JLExtension-Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -507,6 +537,7 @@
 				2238933F1ECEBCA00036029C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		223893401ECEBCA00036029C /* Build configuration list for PBXNativeTarget "JLExtension-SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +546,7 @@
 				223893421ECEBCA00036029C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		223893431ECEBCA00036029C /* Build configuration list for PBXNativeTarget "JLExtension-SwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +555,7 @@
 				223893451ECEBCA00036029C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
